@@ -1,0 +1,11 @@
+.main-nav {
+  padding: 20px 15px; 
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.main-nav__nav-links {
+  display: flex; 
+  justify-content: space-between;
+}
+

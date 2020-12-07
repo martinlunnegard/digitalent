@@ -1,0 +1,21 @@
+.candidate {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 15px;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.27);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.27);
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.27);
+}
+
+.candidate__container {
+  display: flex;
+}
+
+.candidate-container__field {
+  margin-right: 10px;
+}
+
+.btn--edit {
+  margin-right: 5px;
+}
