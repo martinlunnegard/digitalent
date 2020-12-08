@@ -9,21 +9,15 @@ import { Header } from './components/';
 import { Home, Search, EditCandidate } from './pages'; 
 import { CandidatesProvider } from './context/CandidatesState';
 
-function App() {
+function App(props) {
   return (
     <CandidatesProvider>
       <Router>
         <Header />
         <Switch>
-          <Route path="/" exact>
-            <Home />
-          </Route>
-          <Route path="/search">
-            <Search />
-          </Route>
-          <Route path="/edit/:id">
-            <EditCandidate />
-          </Route>
+          <Route path="/" component={Home} exact />
+          <Route path="/search" component={Search} />
+          <Route path="/edit/:id" component={EditCandidate} />
         </Switch>
       </Router>
     </CandidatesProvider>

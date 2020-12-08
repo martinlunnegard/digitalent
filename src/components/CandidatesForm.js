@@ -1,25 +1,19 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form'; 
 import { CandidatesContext } from '../context/CandidatesState';
-import * as Constants from '../constants';
-import uuid from 'react-uuid';
+import Candidate from '../utils/Candidate';
+import * as Constants from '../utils/constants';
 
 const CandidatesForm = () => {
-  const {register, handleSubmit, errors, reset } = useForm();
+  const { register, handleSubmit, errors, reset } = useForm();
 
   const { addCandidate } = useContext(CandidatesContext);
 
   const onSubmit = data => {  
     const { name, age, email, address, stage } = data;
     console.log(data); 
-    const newCandidate = {
-      id: uuid(),
-      name,
-      age,
-      email,
-      address,
-      stage
-    }
+
+    const newCandidate = new Candidate(name, age, email, address, stage); 
 
     addCandidate(newCandidate);
     reset();

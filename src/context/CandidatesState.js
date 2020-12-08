@@ -86,7 +86,7 @@ const initialState = {
       stage: 'Avslutad'
     }
   ],
-  isLoaded: false
+  edit: {}
 }
 
 // Create Context
@@ -111,11 +111,35 @@ export const CandidatesProvider = ({ children }) => {
     });
   } 
 
+  const editCandidate = (candidate) => {
+    dispatch({
+      type: 'EDIT_CANDIDATE',
+      payload: candidate
+    });
+  }
+
+  const getCandidate = (id) => {
+    dispatch({
+      type: 'GET_CANDIDATE',
+      payload: id
+    });
+  }
+
+  const cancelEdit = () => {
+    dispatch({
+      type: 'CANCEL_EDIT'
+    })
+  }
+
   return (
     <CandidatesContext.Provider value={{
       candidates: state.candidates,
+      edit: state.edit,
       addCandidate,
-      deleteCandidate
+      deleteCandidate,
+      editCandidate,
+      getCandidate,
+      cancelEdit
     }}>
       {children}
     </CandidatesContext.Provider>
