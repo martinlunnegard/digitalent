@@ -1,9 +1,15 @@
 import React from 'react'
+import { 
+  SearchInput, 
+  SearchResults 
+} from '../components';
 
 export default function Search() {
   return (
-    <div>
-      SEARCHINNN SEEK AND DESTROY
-    </div>
+    <section className="search">
+      <h2>Sök efter kandidater</h2>
+      <SearchInput />
+      <SearchResults />
+    </section>
   )
 }

@@ -2,14 +2,17 @@ import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from 'react-router-dom';
 import { Header } from './components/';
-import { Home, Search, EditCandidate } from './pages'; 
+import { 
+  Home, 
+  Search, 
+  EditCandidate 
+} from './pages'; 
 import { CandidatesProvider } from './context/CandidatesState';
 
-function App(props) {
+const App = () => {
   return (
     <CandidatesProvider>
       <Router>

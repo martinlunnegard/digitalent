@@ -36,6 +36,22 @@ export default (state, action) => {
         edit: {}
       }
 
+    case 'SEARCH_CANDIDATE': 
+      const query = action.payload.toLowerCase();
+      return {
+        ...state,
+        query,
+        searchResults: state.candidates.filter(candidate => {
+          return candidate.name.toLowerCase().indexOf(query) !== -1;
+        })
+      }
+
+    case 'CLEAR_QUERY': 
+      return {
+        ...state,
+        query: ''
+      }  
+
     default: 
       return state;
   }

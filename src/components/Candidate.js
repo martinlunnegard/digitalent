@@ -16,8 +16,10 @@ const Candidate = ({ candidate }) => {
         <div className="candidate-container__field">Steg: {stage}</div>
       </div>  
       <div className="candidate__container">
-        <Link onClick={() => getCandidate(id)} to={`/edit/${id}`}>Ändra</Link>
-        <button className="btn btn--delete" onClick={() => deleteCandidate(id)} className="delete-btn">X</button>
+        <div className="candidate__container__button-wrapper">
+          <Link onClick={() => getCandidate(id)} to={`/edit/${id}`}>Ändra</Link>
+          <button className="btn btn--delete" onClick={() => deleteCandidate(id)} className="delete-btn">X</button>
+        </div>
       </div>  
     </li>
   )
