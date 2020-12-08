@@ -8,14 +8,11 @@ const SearchInput = () => {
   const handleChange = e => {
     const searchText = e.target.value.trim();
     setQuery(searchText);
-    console.log(query);
   }
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(query, 'handle');
     searchCandidate(query);
-
   }
 
   return (

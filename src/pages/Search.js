@@ -6,7 +6,7 @@ import {
 
 export default function Search() {
   return (
-    <section className="search">
+    <section className="search container">
       <h2>Sök efter kandidater</h2>
       <SearchInput />
       <SearchResults />

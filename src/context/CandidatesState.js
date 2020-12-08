@@ -1,5 +1,6 @@
 import React, { createContext, useReducer} from 'react'; 
 import CandidatesReducer from './CandidatesReducer';
+import * as constants from '../utils/constants';
 import uuid from 'react-uuid';
 
 // Initial state
@@ -11,7 +12,7 @@ const initialState = {
       age: "23",
       email: "ktrimnell0@google.co.uk",
       address :"5 Emmet Crossing",
-      stage: 'Kontakt'
+      stage: constants.CONTACT
     },
     {
       id:uuid(),
@@ -19,7 +20,7 @@ const initialState = {
       age: "43",
       email:"fbiffen1@yahoo.co.jp",
       address:"193 Ryan Street",
-      stage: 'Dialog'
+      stage: constants.DIALOGUE
     },
     {
       id:uuid(),
@@ -27,7 +28,7 @@ const initialState = {
       age: "34",
       email:"mwhates2@weebly.com",
       address:"932 Pankratz Alley",
-      stage: 'Erbjudande'
+      stage: constants.OFFER
     },
     {
       id:uuid(),
@@ -35,7 +36,7 @@ const initialState = {
       age: "56",
       email:"akimmel3@chron.com",
       address:"132 Debra Avenue",
-      stage: 'Intervju'
+      stage: constants.INTERVIEW
     },  
     {
       id:uuid(),
@@ -43,7 +44,7 @@ const initialState = {
       age: "22",
       email:"sallcott4@mashable.com",
       address:"2 Longview Drive",
-      stage: 'Intervju'
+      stage: constants.INTERVIEW
     },
     {
       id:uuid(),
@@ -51,7 +52,7 @@ const initialState = {
       age: "20",
       email:"scornu5@wisc.edu",
       address:"5 Colorado Parkway",
-      stage: 'Kontakt'
+      stage: constants.CONTACT
     },
     {
       id:uuid(),
@@ -59,7 +60,7 @@ const initialState = {
       age: "29",
       email:"adaw6@dropbox.com",
       address:"5 Jana Alley",
-      stage: 'Dialog'
+      stage: constants.DIALOGUE
     },
     {
       id:uuid(),
@@ -67,7 +68,7 @@ const initialState = {
       age: "33",
       email:"mmorrowe7@fotki.com",
       address:"93267 Continental Crossing",
-      stage: 'Avslutad'
+      stage: constants.FINALIZED
     },
     {
       id:uuid(),
@@ -75,7 +76,7 @@ const initialState = {
       age: "37",
       email:"tshenley8@yolasite.com",
       address:"686 Crowley Circle",
-      stage: 'Erbjudande'
+      stage: constants.OFFER
     },
     {
       id:uuid(),
@@ -83,12 +84,13 @@ const initialState = {
       age: "61",
       email:"ddone9@dagondesign.com",
       address:"11 Arizona Park",
-      stage: 'Avslutad'
+      stage: constants.FINALIZED
     }
   ],
   edit: {},
   query: '',
-  searchResults: []
+  searchResults: [],
+  filter: []
 }
 
 // Create Context
@@ -146,19 +148,28 @@ export const CandidatesProvider = ({ children }) => {
     })
   }
 
+  const filterCategories = (value) => {
+    dispatch({
+      type: 'FILTER_CATEGORIES',
+      payload: value
+    })
+  }
+
   return (
     <CandidatesContext.Provider value={{
       candidates: state.candidates,
       edit: state.edit,
       query: state.query,
       searchResults: state.searchResults,
+      filter: state.filter,
       addCandidate,
       deleteCandidate,
       editCandidate,
       getCandidate,
       cancelEdit,
       searchCandidate,
-      clearQuery
+      clearQuery,
+      filterCategories
      
     }}>
       {children}

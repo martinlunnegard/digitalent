@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { useForm } from 'react-hook-form'; 
 import { Link, useHistory } from 'react-router-dom';
 import { CandidatesContext } from '../context/CandidatesState';
-import * as Constants from '../utils/constants';
+import * as constants from '../utils/constants';
 
 const EditCandidate = () => {
   const { editCandidate, edit, cancelEdit } = useContext(CandidatesContext);
@@ -33,12 +33,13 @@ const EditCandidate = () => {
     }
 
     editCandidate(updatedCandidate);
-    history.push('/');
+    history.goBack();
   }
 
   const onError = (errors, e) => console.log(errors, e);
   
   const handleCancel = () => {
+    history.goForward();
     cancelEdit();
   }
 
@@ -72,15 +73,15 @@ const EditCandidate = () => {
         <div>
           <label htmlFor="stage">Steg: </label>
           <select name="stage" ref={register}>
-            <option>{Constants.CONTACT}</option>
-            <option>{Constants.DIALOGUE}</option>
-            <option>{Constants.INTERVIEW}</option>
-            <option>{Constants.OFFER}</option>
-            <option>{Constants.FINALIZED}</option>
+            <option>{constants.CONTACT}</option>
+            <option>{constants.DIALOGUE}</option>
+            <option>{constants.INTERVIEW}</option>
+            <option>{constants.OFFER}</option>
+            <option>{constants.FINALIZED}</option>
           </select>
         </div>
         <input type="submit" value="Klar" />
-        <Link to="/" onClick={handleCancel}>Tillbaka</Link>
+        <button onClick={handleCancel}>Tillbaka</button>
       </form>
     </section>
   )

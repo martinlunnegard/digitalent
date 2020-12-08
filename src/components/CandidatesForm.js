@@ -11,8 +11,6 @@ const CandidatesForm = () => {
 
   const onSubmit = data => {  
     const { name, age, email, address, stage } = data;
-    console.log(data); 
-
     const newCandidate = new Candidate(name, age, email, address, stage); 
 
     addCandidate(newCandidate);

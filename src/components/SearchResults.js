@@ -12,9 +12,12 @@ const SearchResults = () => {
 
   const renderResults = results => {
     return (
+    <>
+      <h2>Resultat</h2>  
       <ul>
         {results.map(candidate => (<Candidate key={candidate.id} candidate={candidate} />))}
       </ul>
+    </>  
     )
   }
 
@@ -26,7 +29,6 @@ const SearchResults = () => {
   
   return (
     <section className="search-results">
-      <h2>Resultat</h2>
        { searchResults.length >= 1 && renderResults(searchResults) }
        { searchResults.length === 0 && query && renderNoResults() }
     </section>  

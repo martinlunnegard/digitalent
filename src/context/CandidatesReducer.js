@@ -21,6 +21,7 @@ export default (state, action) => {
 
       return {
         ...state,
+        searchResults: [],
         candidates: updatedCandidates  
       }
     
@@ -50,7 +51,18 @@ export default (state, action) => {
       return {
         ...state,
         query: ''
-      }  
+      } 
+      
+    case 'FILTER_CATEGORIES': 
+      return {
+        ...state,
+        filter: state.candidates.filter(candidate => {
+         if(action.payload === 'All') {
+           return state.candidate;
+         } 
+         return candidate.stage === action.payload
+        })  
+      }
 
     default: 
       return state;

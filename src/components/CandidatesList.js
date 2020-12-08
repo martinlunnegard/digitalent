@@ -1,15 +1,18 @@
 import React, { useContext } from 'react'
+import CandidatesFilter from './CandidatesFilter';
 import Candidate from './Candidate';
 import { CandidatesContext } from '../context/CandidatesState';
 
 const CandidatesList = () => {
-  const { candidates } = useContext(CandidatesContext); 
-  console.log(candidates, 'candidates');
+  const { candidates, filter } = useContext(CandidatesContext); 
+  const data = filter.length > 0 ? filter : candidates;
+
   return (
     <section>
       <h2>Kandidater</h2>
+      <CandidatesFilter />
         <ul>
-          {candidates.map(candidate => (<Candidate key={candidate.id} candidate={candidate} />))}
+          {data.map(candidate => (<Candidate key={candidate.id} candidate={candidate} />))}
         </ul>
     </section>  
   )
