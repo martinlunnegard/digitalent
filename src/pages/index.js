@@ -1,9 +1,9 @@
 import Home from './Home';
 import Search from './Search'; 
-import EditCandidate from './EditCandidate';
+import Edit from './Edit';
 
 export {
   Home,
   Search,
-  EditCandidate
+  Edit
 }

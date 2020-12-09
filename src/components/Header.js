@@ -1,17 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Search } from 'react-bootstrap-icons';
 import './Header.css';
 
 const Header = () => {
   return (
-    <header>
-      <nav className="main-nav">
-        <ul className="main-nav__nav-links">
+    <header className="bg-white fixed-top pt-3 pb-3">
+      <nav className="main-nav container">
+        <ul className="w-100 d-flex justify-content-between">
           <li>
-            <Link to="/" style={{ color: '#ffffff', fontWeight: 'bold', textDecoration: 'none', textTransform: 'uppercase' }}>Hem</Link>
+            <Link to="/" style={{ fontSize: 24, color: '#1b3752', fontWeight: 'bold', textDecoration: 'none', textTransform: 'uppercase' }}>Hem</Link>
           </li>
           <li>
-            <Link to="/search" style={{ color: '#ffffff', fontWeight: 'bold', textDecoration: 'none', textTransform: 'uppercase' }}>Sök</Link>
+            <Link to="/search" className="d-flex align-items-center" style={{ fontSize: 24, color: '#1b3752', fontWeight: 'bold', textDecoration: 'none', textTransform: 'uppercase' }}>
+              <span>Sök</span><Search className="ml-2" style={{ fontSize: 18 }} />
+            </Link>
           </li>
         </ul>
       </nav>

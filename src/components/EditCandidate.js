@@ -1,12 +1,12 @@
 import React, { useContext, useEffect } from 'react';
 import { useForm } from 'react-hook-form'; 
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { CandidatesContext } from '../context/CandidatesState';
 import * as constants from '../utils/constants';
 
 const EditCandidate = () => {
   const { editCandidate, edit, cancelEdit } = useContext(CandidatesContext);
-  const { handleSubmit, errors, reset, register, setValue } = useForm();
+  const { handleSubmit, errors, register, setValue } = useForm();
   const history = useHistory();
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const EditCandidate = () => {
       setValue('address', edit.address);
       setValue('stage', edit.stage);
     } 
-  },[edit]);
+  },[edit, setValue]);
   
   const onSubmit = data => {
     const { id, name, age, email, address, stage } = data;
@@ -86,7 +86,5 @@ const EditCandidate = () => {
     </section>
   )
 } 
-
-
 
 export default EditCandidate;

@@ -8,10 +8,8 @@ import {
 const Home = () => {
   return (
     <main>
-      <div className="container"> 
-        <CandidatesForm />
-        <CandidatesList />
-      </div>
+      <CandidatesForm />
+      <CandidatesList />
     </main>
   )
 }
