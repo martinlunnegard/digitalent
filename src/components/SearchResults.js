@@ -6,8 +6,10 @@ const SearchResults = () => {
   const { searchResults, query, clearQuery } = useContext(CandidatesContext); 
 
   useEffect(() => {
-    // Reset query 
-    clearQuery();
+    // Reset query on unmount
+    return(() => {
+      clearQuery();
+    });
   }, []);
 
   const renderResults = results => {
