@@ -14,6 +14,7 @@ const CandidatesFilter = () => {
   return (
     <Form>
       <Form.Group>
+        <Form.Label className="text-white font-weight-bold">Filtrera: </Form.Label>
         <Form.Control 
           className="mb-4" 
           as="select" 

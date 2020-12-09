@@ -6,8 +6,8 @@ import {
 
 export default function Search() {
   return (
-    <section className="search container">
-      <h2>Sök efter kandidater</h2>
+    <section id="search">
+      <h2 className="text-white font-weight-bold mb-4">Sök efter kandidater</h2>
       <SearchInput />
       <SearchResults />
     </section>

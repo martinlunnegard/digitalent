@@ -11,6 +11,7 @@ export default (state, action) => {
         candidates: state.candidates.filter(candidate => candidate.id !== action.payload)
       }
     case 'EDIT_CANDIDATE':
+      console.log(action.payload);
       const updatedCandidate = action.payload;
       const updatedCandidates = state.candidates.map(candidate => {
         if(candidate.id === updatedCandidate.id) {  

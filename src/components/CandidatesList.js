@@ -9,7 +9,7 @@ const CandidatesList = () => {
 
   return (
     <section>
-      <h2 className="text-white mb-4">Kandidater</h2>
+      <h2 className="text-white font-weight-bold mb-4">Kandidater</h2>
       <CandidatesFilter />
         <ul>
           {data.map(candidate => (<Candidate key={candidate.id} candidate={candidate} />))}

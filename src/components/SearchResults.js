@@ -13,7 +13,7 @@ const SearchResults = () => {
   const renderResults = results => {
     return (
     <>
-      <h2>Resultat</h2>  
+      <h2 className="text-white font-weight-bold mb-4">Resultat:</h2>  
       <ul>
         {results.map(candidate => (<Candidate key={candidate.id} candidate={candidate} />))}
       </ul>
@@ -23,7 +23,7 @@ const SearchResults = () => {
 
   const renderNoResults = () => {
     return (
-      <div>Inga resultat</div>
+      <div className="text-white font-weight-bold" style={{ fontSize: 24 }}>Inga resultat</div>
     )
   }
   
