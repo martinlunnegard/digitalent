@@ -8,10 +8,11 @@ export default (state, action) => {
     case 'DELETE_CANDIDATE': 
       return {
         ...state,
-        candidates: state.candidates.filter(candidate => candidate.id !== action.payload)
+        candidates: state.candidates.filter(candidate => candidate.id !== action.payload),
+        filtered: state.filtered.filter(candidate => candidate.id !== action.payload),
+        searchResults: state.searchResults.filter(candidate => candidate.id !== action.payload)
       }
     case 'EDIT_CANDIDATE':
-      console.log(action.payload);
       const updatedCandidate = action.payload;
       const updatedCandidates = state.candidates.map(candidate => {
         if(candidate.id === updatedCandidate.id) {  
@@ -57,7 +58,8 @@ export default (state, action) => {
     case 'FILTER_CATEGORIES': 
       return {
         ...state,
-        filter: state.candidates.filter(candidate => {
+        filterValue: action.payload,
+        filtered: state.candidates.filter(candidate => {
          if(action.payload === 'All') {
            return state.candidate;
          } 

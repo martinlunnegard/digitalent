@@ -1,5 +1,7 @@
 import React, { useState, useContext } from 'react'
 import { CandidatesContext } from '../context/CandidatesState';
+import { Form, Button } from 'react-bootstrap';
+import { Search } from 'react-bootstrap-icons';
 
 const SearchInput = () => {
   const [query, setQuery] = useState('');
@@ -16,10 +18,15 @@ const SearchInput = () => {
   }
 
   return (
-    <form className="mb-5" onSubmit={handleSubmit}>
-      <input type="text" name="search" onChange={(e) => handleChange(e)} />
-      <input type="submit" value="Sök" />
-    </form>
+    <Form className="mb-5" onSubmit={handleSubmit}>
+      <Form.Group className="d-flex">
+        <Form.Control type="search" name="search" onChange={(e) => handleChange(e)} />
+        <Button className="ml-3 d-flex align-items-center btn-blue" type="submit">
+          <span className="mr-2">Sök</span>
+          <Search />
+        </Button>
+      </Form.Group>
+    </Form>
   )
 }
 

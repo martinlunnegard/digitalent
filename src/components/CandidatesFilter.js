@@ -33,20 +33,6 @@ const CandidatesFilter = () => {
       </Form.Group>
     </Form>
   )
-  //   <select
-  //     id="filter"
-  //     value={value}
-  //     onChange={e => setValue(e.target.value)}
-  //     onBlur={e =>  setValue(e.target.value)}
-  //   >
-  //     <option value="All">Alla</option>
-  //     <option value={constants.CONTACT}>{constants.CONTACT}</option>
-  //     <option value={constants.DIALOGUE}>{constants.DIALOGUE}</option>
-  //     <option value={constants.INTERVIEW}>{constants.INTERVIEW}</option>
-  //     <option value={constants.OFFER}>{constants.OFFER}</option>
-  //     <option value={constants.FINALIZED}>{constants.FINALIZED}</option>
-  //   </select>
-  // )
 }
 
 export default CandidatesFilter;

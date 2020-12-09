@@ -4,15 +4,17 @@ import Candidate from './Candidate';
 import { CandidatesContext } from '../context/CandidatesState';
 
 const CandidatesList = () => {
-  const { candidates, filter } = useContext(CandidatesContext); 
-  const data = filter.length > 0 ? filter : candidates;
+  const { candidates, filtered, filterValue } = useContext(CandidatesContext); 
+  let data = candidates;
 
+  if(filterValue !== 'All') data = filtered; 
+  
   return (
     <section>
       <h2 className="text-white font-weight-bold mb-4">Kandidater</h2>
       <CandidatesFilter />
         <ul>
-          {data.map(candidate => (<Candidate key={candidate.id} candidate={candidate} />))}
+          {data && data.map(candidate => (<Candidate key={candidate.id} candidate={candidate} />))}
         </ul>
     </section>  
   )

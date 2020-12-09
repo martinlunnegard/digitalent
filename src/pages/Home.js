@@ -1,9 +1,5 @@
 import React from 'react'
-import { 
-  CandidatesList,
-  CandidatesForm
- } from '../components'; 
- import './Home.css';
+import { CandidatesList, CandidatesForm } from '../components'; 
 
 const Home = () => {
   return (

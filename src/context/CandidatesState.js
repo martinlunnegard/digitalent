@@ -90,7 +90,8 @@ const initialState = {
   edit: {},
   query: '',
   searchResults: [],
-  filter: []
+  filtered: [],
+  filterValue: ''
 }
 
 // Create Context
@@ -161,7 +162,8 @@ export const CandidatesProvider = ({ children }) => {
       edit: state.edit,
       query: state.query,
       searchResults: state.searchResults,
-      filter: state.filter,
+      filtered: state.filtered,
+      filterValue: state.filterValue,
       addCandidate,
       deleteCandidate,
       editCandidate,

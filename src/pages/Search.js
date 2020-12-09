@@ -1,10 +1,7 @@
 import React from 'react'
-import { 
-  SearchInput, 
-  SearchResults 
-} from '../components';
+import { SearchInput, SearchResults } from '../components';
 
-export default function Search() {
+const Search = () => {
   return (
     <section id="search">
       <h2 className="text-white font-weight-bold mb-4">Sök efter kandidater</h2>
@@ -13,3 +10,5 @@ export default function Search() {
     </section>
   )
 }
+
+export default Search;

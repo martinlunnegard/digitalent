@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Search } from 'react-bootstrap-icons';
-import './Header.css';
 
 const Header = () => {
   return (
